@@ -1,7 +1,7 @@
 #include "util/GammaTable.h"
 
 // Include windows gamma functions
-#include <windows.h>
+#include "winapi.h"
 #include "winuser.h"
 
 GammaTable::GammaTable()

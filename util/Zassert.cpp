@@ -7,7 +7,7 @@
 #pragma warning(disable: 244 267 311 312)
 
 #ifdef WIN32
-	#include "windows.h"
+	#include "winapi.h"
 #else
 	#include "netdb.h"
 	#include "unistd.h"

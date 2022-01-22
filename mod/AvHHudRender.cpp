@@ -1263,7 +1263,7 @@ void AvHHud::GetOrderDirection(vec3_t inTarget, int inOrderType)
 
 void AvHHud::DrawTeammateOrders()
 {
-	TeammateOrderListType::iterator toErase = NULL;
+	TeammateOrderListType::iterator toErase;
 	cl_entity_s* theLocalPlayer = gEngfuncs.GetLocalPlayer();
 
 	const float flashLength = 1.0f;
@@ -1311,7 +1311,7 @@ void AvHHud::DrawTeammateOrders()
 		}
 	}
 
-	if (toErase != NULL)
+	if (toErase != this->mTeammateOrder.end())
 		this->mTeammateOrder.erase(toErase);
 
 	// flash target player
@@ -2474,7 +2474,7 @@ void AvHHud::DrawBuildHealthEffectsForEntity(int inEntityIndex, float inAlpha)
 	{
 		if(theContinue && theLocalPlayer)
 		{
-			const kDrawEnemyBuildingDistance = 200;
+			const int kDrawEnemyBuildingDistance = 200;
 
 			// Draw effects if we are in top-down mode OR
 			if(	this->GetInTopDownMode() ||
@@ -4026,7 +4026,9 @@ void AvHHud::RenderAlienUI()
 		AngleVectors(v_angles, theForward, theRight, theUp);
 		VectorNormalize(theForward);
 
-		for(int theBlip = 0; theBlip < this->mFriendlyBlips.mNumBlips; theBlip++)
+		int theBlip;
+
+		for(theBlip = 0; theBlip < this->mFriendlyBlips.mNumBlips; theBlip++)
 		{
 			// Get vector to current blip
 			Vector theVectorToBlip;

@@ -11,7 +11,7 @@
 #include "engine/APIProxy.h"
 #include "Exports.h"
 
-#include "windows.h"
+#include "winapi.h"
 
 float CL_KeyState (kbutton_t *key);
 extern "C" 

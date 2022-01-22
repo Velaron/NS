@@ -8,10 +8,12 @@
 #include "vgui_App.h"
 
 // for FindFirst and FindNext
-#include <windows.h>
+#include "winapi.h"
 #pragma warning(push)
 #pragma warning(disable: 311)
+#define HSPRITE HSPRITE_
 #include <fmoddyn.h>
+#undef HSPRITE
 #include <fmod_errors.h>
 #pragma warning(pop)
 

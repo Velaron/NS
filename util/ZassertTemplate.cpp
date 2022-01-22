@@ -11,7 +11,7 @@
 // the assert and emailToBugDatabase functions
 
 #ifdef WIN32
-	#include "windows.h"
+	#include "winapi.h"
 		// Only needed for message box
 	#include "winbase.h"
 	#include <process.h>

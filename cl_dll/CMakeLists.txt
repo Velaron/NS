@@ -1,0 +1,120 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(client)
+
+set(CLDLL_LIBRARY client)
+
+add_definitions(-DUSE_OLDAUTH -DAVH_CLIENT)
+
+file(GLOB CLDLL_SOURCES
+	${PROJECT_SOURCE_DIR}/*.cpp
+	${PROJECT_SOURCE_DIR}/hl/*.cpp
+	${PROJECT_SOURCE_DIR}/../ui/*.cpp
+	${PROJECT_SOURCE_DIR}/../util/*.cpp
+	${PROJECT_SOURCE_DIR}/../textrep/*.cpp
+	${PROJECT_SOURCE_DIR}/../game_shared/vgui_*.cpp
+
+	${PROJECT_SOURCE_DIR}/../mod/AnimationUtil.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHAcidRocketGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHActionButtons.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHAlienAbilities.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHAlienWeapon.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHAmbientSound.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHAssert.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHBaseInfoLocation.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHBasePlayerWeapon.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHBileBombGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHBite.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHBite2.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHBlink.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHClaws.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHClientUtil.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHCommanderModeHandler.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHConstants.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHDevour.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHDivineWind.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHEntityHierarchy.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHEvents.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHFont.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHGrenade.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHGrenadeGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHHealingSpray.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHHeavyMachineGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHHelp.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHHud.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHHudRender.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHItemInfo.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHKnife.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHLogoutComponent.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHMachineGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHMapExtents.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHMarineWeapon.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHMetabolize.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHMine.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHMinimap.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHMovementUtil.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHNetworkMessages.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHNexusClient.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHNexusTunnelToServer.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHOrder.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHOverviewControl.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHOverviewMap.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHParasiteGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHParticleEditorHandler.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHParticleSystem.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHParticleSystemManager.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHParticleTemplate.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHParticleTemplateClient.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHPieMenuHandler.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHPistol.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHPlayerUpgrade.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHPrimalScream.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHScriptClient.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHScriptManager.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHScriptShared.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHScrollHandler.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHScrollPanel.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSelectionHelper.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSharedMovementInfo.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSharedUtil.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSonicGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSpecials.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSpikeGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSpitGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSpores.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSpriteAPI.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHStomp.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHSwipe.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHTeamHierarchy.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHTechImpulsePanel.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHTechNode.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHTechSlotManager.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHTechTree.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHTooltip.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHUIFactory.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHUmbraGun.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHVisibleBlipList.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHWebSpinner.cpp
+	${PROJECT_SOURCE_DIR}/../mod/AvHWelder.cpp
+	${PROJECT_SOURCE_DIR}/../mod/CollisionChecker.cpp
+	${PROJECT_SOURCE_DIR}/../mod/CollisionUtil.cpp
+)
+
+include_directories(
+	${PROJECT_SOURCE_DIR}/
+	${PROJECT_SOURCE_DIR}/hl
+	${PROJECT_SOURCE_DIR}/..
+	${PROJECT_SOURCE_DIR}/../dlls
+	${PROJECT_SOURCE_DIR}/../mod
+	${PROJECT_SOURCE_DIR}/../ui
+	${PROJECT_SOURCE_DIR}/../util
+	${PROJECT_SOURCE_DIR}/../textrep
+	${PROJECT_SOURCE_DIR}/../common
+	${PROJECT_SOURCE_DIR}/../engine
+	${PROJECT_SOURCE_DIR}/../pm_shared
+	${PROJECT_SOURCE_DIR}/../game_shared
+	${PROJECT_SOURCE_DIR}/../particles
+	${PROJECT_SOURCE_DIR}/../3rdparty/vgui/include
+	${PROJECT_SOURCE_DIR}/../3rdparty/fmod/include
+)
+
+add_library(${CLDLL_LIBRARY} MODULE ${CLDLL_SOURCES})

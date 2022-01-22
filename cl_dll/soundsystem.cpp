@@ -21,7 +21,7 @@
 //
 // $NoKeywords: $
 //=============================================================================
-#include <windows.h>
+#include "winapi.h"
 #include <dsound.h>
 #include <mmsystem.h>
 #include "r_studioint.h"

@@ -15,8 +15,14 @@
 #include "cl_dll/vgui_SchemeManager.h"
 
 class UIFactory;
+#if 0
 struct fmod_instance_struct;
 typedef fmod_instance_struct FMOD_INSTANCE;
+#else
+#define HSPRITE HSPRITE_
+#include <fmoddyn.h>
+#undef HSPRITE
+#endif
 typedef struct FSOUND_STREAM FSOUND_STREAM;
 
 // Initializes self from text file

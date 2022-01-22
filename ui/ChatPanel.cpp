@@ -2,7 +2,7 @@
 #include "VGUI_KeyCode.h"
 #include "VGUI_App.h"
 #include "cl_dll/hud.h"
-#include <windows.h>
+#include "winapi.h"
 
 using namespace vgui;
 

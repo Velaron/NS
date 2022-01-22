@@ -55,7 +55,7 @@ EXPORT_FUNCTION IBaseInterface *CreateInterface( const char *pName, int *pReturn
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
-#include "windows.h"
+#include "winapi.h"
 #endif
 
 

@@ -1,7 +1,7 @@
 #ifndef AVH_DEBUG_UTIL_H
 #define AVH_DEBUG_UTIL_H
 
-#include <windows.h>
+#include "winapi.h"
 #include <iostream>
 
 /**

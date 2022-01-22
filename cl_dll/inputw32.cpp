@@ -12,7 +12,7 @@
 #include "in_defs.h"
 #include "../engine/keydefs.h"
 #include "view.h"
-#include "windows.h"
+#include "winapi.h"
 
 #include "engine/APIProxy.h"
 #include "Exports.h"

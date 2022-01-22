@@ -6,7 +6,7 @@
 
 // For FindFirst/FindNext functionality in BuildFileList
 #ifdef WIN32
-	#include "windows.h"
+	#include "winapi.h"
 #else
 	#include "util/LinuxSupport.h"
 #endif

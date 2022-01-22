@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <windows.h>
+#include "winapi.h"
 
 
 #define DOS_SIGNATURE   0x5A4D       /* MZ */

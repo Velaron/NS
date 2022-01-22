@@ -22,7 +22,9 @@
 #include <stdlib.h>
 #pragma warning(push)
 #pragma warning(disable: 311)
+#define HSPRITE HSPRITE_
 #include <fmoddyn.h>
+#undef HSPRITE
 #pragma warning(pop)
 #include "cl_dll/cl_util.h"
 

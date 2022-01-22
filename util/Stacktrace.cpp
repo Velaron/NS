@@ -7,7 +7,7 @@
 #pragma warning(disable: 311 312 313)
 
 #ifdef WIN32
-	#include "windows.h"
+	#include "winapi.h"
 #endif
 #include "stdio.h"
 #include "string.h"

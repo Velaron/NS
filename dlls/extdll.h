@@ -39,7 +39,7 @@
 #define NOSERVICE
 #define NOMCX
 #define NOIME
-#include "windows.h"
+#include "winapi.h"
 #else // _WIN32
 #define FALSE 0
 #define TRUE (!FALSE)
