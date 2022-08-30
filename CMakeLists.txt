@@ -20,12 +20,18 @@ else()
 	add_definitions(-D_CRT_SILENCE_NONCONFORMING_TGMATH_H -D_CRT_SECURE_NO_WARNINGS)
 endif()
 
+# dependencies
+set(ZLIB_ROOT ${PROJECT_SOURCE_DIR}/3rdparty/zlib CACHE PATH "")
+add_subdirectory(3rdparty/zlib)
+
+add_subdirectory(3rdparty/libpng)
+
 if(BUILD_CLIENT)
-	add_subdirectory(cl_dll)
+#	add_subdirectory(cl_dll)
 endif()
 
 if(BUILD_SERVER)
-	add_subdirectory(dlls)
+#	add_subdirectory(dlls)
 endif()
 
 if(NOT BUILD_SERVER AND NOT BUILD_CLIENT)

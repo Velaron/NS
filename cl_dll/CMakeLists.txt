@@ -53,8 +53,8 @@ file(GLOB CLDLL_SOURCES
 	${PROJECT_SOURCE_DIR}/../mod/AvHMinimap.cpp
 	${PROJECT_SOURCE_DIR}/../mod/AvHMovementUtil.cpp
 	${PROJECT_SOURCE_DIR}/../mod/AvHNetworkMessages.cpp
-	${PROJECT_SOURCE_DIR}/../mod/AvHNexusClient.cpp
-	${PROJECT_SOURCE_DIR}/../mod/AvHNexusTunnelToServer.cpp
+#	${PROJECT_SOURCE_DIR}/../mod/AvHNexusClient.cpp
+#	${PROJECT_SOURCE_DIR}/../mod/AvHNexusTunnelToServer.cpp
 	${PROJECT_SOURCE_DIR}/../mod/AvHOrder.cpp
 	${PROJECT_SOURCE_DIR}/../mod/AvHOverviewControl.cpp
 	${PROJECT_SOURCE_DIR}/../mod/AvHOverviewMap.cpp
@@ -113,8 +113,12 @@ include_directories(
 	${PROJECT_SOURCE_DIR}/../pm_shared
 	${PROJECT_SOURCE_DIR}/../game_shared
 	${PROJECT_SOURCE_DIR}/../particles
-	${PROJECT_SOURCE_DIR}/../3rdparty/vgui/include
+	
+	${PROJECT_SOURCE_DIR}/../3rdparty/vgui-dev/include
 	${PROJECT_SOURCE_DIR}/../3rdparty/fmod/include
+	${PROJECT_SOURCE_DIR}/../3rdparty/lua
+	${PROJECT_SOURCE_DIR}/../3rdparty/libpng
+	${PROJECT_SOURCE_DIR}/../3rdparty/zlib
 )
 
 add_library(${CLDLL_LIBRARY} MODULE ${CLDLL_SOURCES})
